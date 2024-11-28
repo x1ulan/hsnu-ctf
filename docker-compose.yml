@@ -1,0 +1,32 @@
+version: "3"
+services:
+    cookie:
+        build: ./cookie
+        container_name: cookie
+        ports:
+          - "20001:80"
+        working_dir: /var/www/html
+    leak:
+        build: ./leak
+        container_name: leak
+        ports:
+          - "20002:80"
+        working_dir: /var/www/html
+    lfi:
+        build: ./lfi
+        container_name: lfi
+        ports:
+          - "20003:80"
+        working_dir: /app
+    lfi-pro:
+        build: ./lfi-pro
+        container_name: lfi-pro
+        ports:
+          - "20004:80"
+        working_dir: /app
+    xss:
+        build: ./xss
+        container_name: xss
+        ports:
+          - "20005:80"
+        working_dir: /app
